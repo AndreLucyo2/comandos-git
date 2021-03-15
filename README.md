@@ -2,7 +2,15 @@
 
 Lista de comandos úteis do GIT e algo a mais ...
 
+Links referencia:  
+
+[Comandos git github](https://comandosgit.github.io/).
+
 ### INICIANDO UM PROJETO:(Já EXISTE LOCALMENTE)
+
+------
+
+
 
 - Criar repositório no Git Remoto.
 - Configurar conexão com GIT Remoto.
@@ -52,6 +60,10 @@ git push -u origin master
 
 ### CLONAR UM PROJETO GIT_REMOTE -  PARA TRABALHAR LOCALMENTE
 
+------
+
+
+
 ```
 git Clone URL...            - Entrar na pasta desejada dar um Git Bash, Git Clone + URL Cria copia do progeto GitRemoto
 
@@ -73,6 +85,8 @@ git push origin MinhaBranch - sobe as alterações para o repositório no git
 
 
 ### MERGE (Ex. Branch MASTER) - MESCLAGEM - APLICA ALTERAÇÕES NA BRANCH PRINCIPAL
+
+------
 
 Referencia git lab [link](https://gitlab.com/help/user/project/merge_requests/index.md#checkout-merge-requests-locally).
 
@@ -115,6 +129,7 @@ git push origin master
 	git help add
 	git help commit
 	git help <qualquer_comando_git>
+
 
 
 ## Configuração
