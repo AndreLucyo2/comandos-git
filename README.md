@@ -1,6 +1,102 @@
 # GIT
 
-Lista de comandos úteis do GIT
+Lista de comandos úteis do GIT e algo a mais ...
+
+### INICIANDO UM PROJETO:(Já EXISTE LOCALMENTE)
+
+- Criar repositório no Git Remoto.
+- Configurar conexão com GIT Remoto.
+
+```
+git config --global user.name "MEU_USER_NAME"
+git config --global user.email "MEU_USER_EMAIL"
+```
+
+- Entrar na pasta do projeto  (Exemplo: Git Bash here...) ou pelo terminal:
+
+```
+cd existing_folder 
+```
+
+- Iniciar o Git ( .git )
+
+
+```
+git init
+```
+
+- Setar a URL para o projeto Git Remoto:
+
+
+```
+git remote add origin URLDoMeuNovoProjeto.git
+```
+
+- Trazer alterações do repositório remoto para local:
+
+
+```
+git pull
+```
+
+Enviando projeto para remoto:
+
+```
+git status
+git add .
+git commit -m "Descrição meu Commit" 
+git push -u origin master
+```
+
+
+
+### CLONAR UM PROJETO GIT_REMOTE -  PARA TRABALHAR LOCALMENTE
+
+```
+git Clone URL...            - Entrar na pasta desejada dar um Git Bash, Git Clone + URL Cria copia do progeto GitRemoto
+
+SE FOR O CASO CRIA UMA NOVA BRANCH DA ISSUE (tarefa) NO GIT REMOTO
+
+git fetch                   - Atualiza a listas de branchs, 
+git checkout MinhaBranch    - Troca de Branch Deixa corrente a que vai trabalhar
+git pull origin MinhaBranch - "Baixar" o projeto do repositório para máquina local, 
+							  realizar esse procedimento ao criar uma nova branch
+
+TRABALHA NO PROJETO LOCAL - - - - - - - - REALIZA ALTERAÇÕES - - - - - - - - - - -
+
+git status                  - verificar os arquivos alterados, em vermelho não empacotados, em verde empacotados (git add .)
+git add .                   - Empacotar as alterações, (.) empacota todos os arquivos, ou escolher um arquivo específico
+git commit -m "Descrição"   - Depois de add faz o commit, lembrando que as alterações ainda está na máquina local.
+git push origin MinhaBranch - sobe as alterações para o repositório no git
+```
+
+
+
+### MERGE (Ex. Branch MASTER) - MESCLAGEM - APLICA ALTERAÇÕES NA BRANCH PRINCIPAL
+
+Referencia git lab [link](https://gitlab.com/help/user/project/merge_requests/index.md#checkout-merge-requests-locally).
+
+```
+Confira, revise e mescle localmente
+Etapa 1. Buscar e verificar o ramo para este pedido de mesclagem
+
+git fetch origin
+git checkout -b 1-29112018_cad_empresa-2 origin/1-29112018_cad_empresa-2
+
+Etapa 2. Revise as alterações localmente
+
+Etapa 3. Mesclar a branch e corrigir os conflitos que surgirem
+
+git fetch origin
+git checkout origin/master
+git merge --no-ff 1-29112018_cad_empresa-2
+
+Etapa 4. Empurre o resultado da mesclagem para o GitLab --- criar um novo commit com a mesclagem
+
+git push origin master
+```
+
+
 
 ## Estados
 
@@ -25,7 +121,7 @@ Lista de comandos úteis do GIT
 
 ### Geral
 
-As configurações do GIT são armazenadas no arquivo **.gitconfig** localizado dentro do diretório do usuário do Sistema Operacional (Ex.: Windows: C:\Users\Documents and Settings\Leonardo ou *nix /home/leonardo).
+As configurações do GIT são armazenadas no arquivo **.gitconfig** localizado dentro do diretório do usuário do Sistema Operacional (Ex.: Windows: C:\Users\Documents and Settings\Leonardo ou *nix /home/andre).
 
 As configurações realizadas através dos comandos abaixo serão incluídas no arquivo citado acima.
 
@@ -33,7 +129,7 @@ As configurações realizadas através dos comandos abaixo serão incluídas no 
 
 	git config --global user.name "Leonardo Comelli"
 
-##### Setar email
+##### Setar e-mail
 
 	git config --global user.email leonardo@software-ltda.com.br
 
@@ -374,7 +470,7 @@ Para alternar entre um branch e outro é necessário fazer o commit das alteraç
 
 	git stash apply stash@{2}
 
-Onde **2** é o indíce do stash desejado.
+Onde **2** é o índice do stash desejado.
 
 ##### Criar um branch a partir de um stash
 
@@ -448,7 +544,7 @@ O bisect (pesquisa binária) é útil para encontrar um commit que esta gerando 
 
 ##### Marcar o commit como bom
 
-O GIT irá navegar entre os commits para ajudar a indentificar o commit que esta com o problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como **bom**.
+O GIT irá navegar entre os commits para ajudar a identificar o commit que esta com o problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como **bom**.
 
 	git bisect good
 
@@ -465,8 +561,4 @@ Depois de encontrar o commit com problema, para retornar para o *HEAD* utilize:
 
 	git bisect reset
 
-
-# Contribuições
-
-Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!
 
