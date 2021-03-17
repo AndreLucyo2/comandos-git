@@ -224,6 +224,30 @@ Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo *
 
 	git rm -r diretorio
 
+### Comparar alterações usando o [diff](https://git-scm.com/docs/git-diff#git-diff-emgitdiffemltoptionsgtltcommitgtltcommitgt--ltpathgt82308203) 
+
+Para fazer o dif entre dois branchs pelo terminal: 
+
+```
+git diff branch_1..branch_2
+```
+
+Comparar alteração de arquivo especifico
+
+```
+git diff branch1name branch2name path/to/file
+
+git diff mybranch/myfile.cs mysecondbranch/myfile.cs
+```
+
+```
+git diff branch1:file branch2:file
+
+git diff mybranch:myfile.cs mysecondbranch:myfile.cs
+```
+
+
+
 ### Visualizar histórico
 
 ##### Exibir histórico
